@@ -1,0 +1,191 @@
+body {
+    background-color: bisque;
+
+}
+
+@font-face {
+    font-family: fonte;
+    src: url(../fonts/Young\ Man.otf);
+    font-style: normal;
+}
+header {
+    position: relative;
+    width: 100%;
+    background-color: rgb(229, 174, 97);
+    border-radius: 10px;
+    display: inline-block
+}
+
+.titulo {
+    font-size: 70px;
+    font-family: fonte;
+    text-align: center;
+
+}
+
+
+.navegacao {
+    position: absolute;
+    max-width: fit-content;
+    min-width: none;
+    background-color: coral;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline;
+    font-size: 1.5em;
+}
+
+.buscar {
+    top: 60%;
+    left: 85%;
+}
+
+.fale {
+    top: 60%;
+    left: 60%;
+}
+
+.login {
+    top: 60%;
+    left: 10%;
+}
+
+.home {
+    top: 60%;
+    left: 30%;
+}
+
+.separar {
+    position: relative;
+    background-color: transparent;
+    min-height: 20px;
+}
+
+
+.centro {
+    position: relative;
+    margin: auto;
+    height: 800px;
+    width: 100%;
+    background-color: rgb(236, 175, 100);
+    border-radius: 10px;
+}
+
+.animado { /*caixa "o melhor boné do brasil*/
+
+    max-width: 700px;
+    background-color: coral;
+    border: 10px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-family: fonte;
+
+    transition: 3s cubic-bezier(0.43, 0, 1, 1); /*animacao de cima para baixo*/
+}
+
+.container, /*contém a caixa para poder efetuar a animacao*/
+.animado {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 500px;
+
+}
+
+.container:hover .animado { /*animacao*/
+    transform: translateY(100px);
+}
+
+.slogan { 
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    font-size: 30px;
+
+    text-align: center;
+
+}
+
+.giratorio { /*caixa que gira*/
+    transition: transform 2s ease, background-color 1s ease;
+    background-color: coral;
+    border: 3px solid black;
+    border-radius: 6px;
+
+
+}
+
+.container2, /*contém a caixa para poder efetuar a animacao*/
+.giratorio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    text-align: center;
+
+}
+
+.container2:hover .giratorio {  /*animacao*/
+
+    animation: cor 4s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cor {
+    0% {
+        transform: rotate(0deg);
+        background-color: coral;
+    }
+
+    50% {
+        transform: rotate(0deg);
+        background-color: rgb(190, 56, 56);
+    }
+
+    75% {
+        background-color: rgb(190, 56, 56);
+
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: rgb(190, 56, 56);
+
+    }
+
+}
+
+
+.slogan,
+.animado,
+.giratorio,
+.container,
+.container2 {
+    transform: translateX(-55%);    /*centralizar as caixas em qualquer responsivo*/
+}
+
+
+@media (max-width: 375px) {  /*responsivo para o cabeçalho*/
+
+    .login,
+    .fale,
+    .buscar,
+    .home {
+        width: 30px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 375px) {     /*responsivo para o corpo*/
+
+    .container,
+    .container2,
+    .animado,
+    .giratorio,
+    .slogan {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+}
